@@ -1,0 +1,900 @@
+/* =========================
+   GRUNDEINSTELLUNGEN
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fffaf5;
+    color: #222;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(255, 250, 245, 0.85);
+    backdrop-filter: blur(10px);
+
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 120px 10%;
+
+    background: linear-gradient(
+        135deg,
+        #ffd6e8,
+        #d9d2ff,
+        #c8f4ff
+    );
+
+    overflow: hidden;
+}
+
+.hero-text {
+    animation: slideIn 1s ease;
+}
+
+.small-title {
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(60px, 9vw, 130px);
+    line-height: 0.9;
+}
+
+.hero h1 span {
+    color: #ff4f9a;
+}
+
+.intro {
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 15px 28px;
+
+    background: #222;
+    color: white;
+
+    text-decoration: none;
+    border-radius: 50px;
+
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: scale(1.08);
+}
+
+
+/* =========================
+   CIRCLE
+========================= */
+
+.hero-circle {
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 20px 20px 0 #ff4f9a;
+
+    animation: floating 4s ease-in-out infinite;
+}
+
+.circle-text {
+    font-size: 70px;
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+.section {
+    padding: 120px 10%;
+}
+
+.section-title {
+    margin-bottom: 60px;
+}
+
+.section-title p {
+    color: #ff4f9a;
+    font-weight: bold;
+}
+
+.section-title h2 {
+    font-size: 55px;
+}
+
+
+/* =========================
+   ÜBER MICH
+========================= */
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.about-photo img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 30px;
+    transform: rotate(-3deg);
+    display: block;
+}
+
+.about-text {
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+.about-text h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   SKILLS
+========================= */
+
+.colorful-section {
+    background: #222;
+    color: white;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.skill-card {
+    padding: 35px;
+
+    background: white;
+    color: #222;
+
+    border-radius: 25px;
+
+    transition: 0.4s;
+}
+
+.skill-card:hover {
+    transform: translateY(-12px) rotate(1deg);
+}
+
+.emoji {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.skill-card h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    line-height: 1.6;
+}
+
+
+/* =========================
+   SCHULISCHER WERDEGANG
+========================= */
+
+.education-section {
+    background: #fffaf5;
+}
+
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    top: 0;
+    bottom: 0;
+
+    width: 4px;
+
+    background: #d9d2ff;
+
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+
+    width: 50%;
+
+    padding: 20px 50px;
+
+    margin-bottom: 40px;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+
+.timeline-year {
+    font-size: 18px;
+    font-weight: bold;
+
+    color: #ff4f9a;
+
+    margin-bottom: 10px;
+}
+
+.timeline-dot {
+    position: absolute;
+
+    top: 25px;
+
+    width: 22px;
+    height: 22px;
+
+    background: #ff4f9a;
+
+    border: 5px solid #fffaf5;
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 0 3px #ff4f9a;
+
+    z-index: 2;
+}
+
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -11px;
+}
+
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -11px;
+}
+
+.timeline-content {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    box-shadow: 10px 10px 0 #d9d2ff;
+
+    transition: 0.3s;
+}
+
+.timeline-content:hover {
+    transform: translateY(-8px);
+    box-shadow: 15px 15px 0 #ff4f9a;
+}
+
+.school-type {
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: #ff4f9a;
+}
+
+.timeline-content h3 {
+    font-size: 27px;
+
+    margin: 10px 0 15px;
+}
+
+.timeline-content p {
+    line-height: 1.6;
+    color: #555;
+}
+
+.school-tag {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    padding: 8px 14px;
+
+    background: #f2efff;
+
+    border-radius: 50px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   SPRACHEN
+========================= */
+
+.languages {
+    max-width: 800px;
+}
+
+.language {
+    margin-bottom: 35px;
+}
+
+.language > span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.language-bar {
+    height: 15px;
+
+    background: #eee;
+
+    border-radius: 20px;
+
+    margin: 10px 0;
+}
+
+.language-progress {
+    height: 100%;
+
+    background: #ff4f9a;
+
+    border-radius: 20px;
+}
+
+.progress-100 {
+    width: 100%;
+}
+
+.progress-80 {
+    width: 80%;
+}
+
+.progress-60 {
+    width: 60%;
+}
+
+
+/* =========================
+   HOBBYS
+========================= */
+
+.hobbies {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.hobby {
+    padding: 30px;
+
+    background: white;
+    color: #222;
+
+    border-radius: 25px;
+
+    font-size: 40px;
+
+    transition: 0.3s;
+}
+
+.hobby:hover {
+    transform: translateY(-10px);
+}
+
+.hobby h3 {
+    font-size: 22px;
+    margin: 15px 0;
+}
+
+.hobby p {
+    font-size: 16px;
+}
+
+
+/* =========================
+   WARUM INFORMATIK
+========================= */
+
+.why-box {
+    max-width: 850px;
+
+    font-size: 24px;
+
+    line-height: 1.7;
+}
+
+.why-box p {
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   CODE CARD
+========================= */
+
+.code-card {
+    max-width: 850px;
+    margin: 60px auto 0;
+
+    background: #222;
+    color: white;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow: 12px 12px 0 #d9d2ff;
+
+    transition: 0.3s;
+}
+
+.code-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 16px 16px 0 #ff4f9a;
+}
+
+
+/* Code-Editor-Kopf */
+
+.code-top {
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 20px;
+
+    background: #333;
+}
+
+.code-top span {
+    width: 12px;
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: white;
+}
+
+.code-top p {
+    margin-left: 15px;
+
+    font-family: monospace;
+
+    font-size: 14px;
+
+    opacity: 0.7;
+}
+
+
+/* Code */
+
+.code-content {
+    padding: 30px;
+
+    font-family: "Courier New", monospace;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    overflow-x: auto;
+}
+
+.code-content > div {
+    white-space: nowrap;
+}
+
+.line-number {
+    color: #777;
+
+    display: inline-block;
+
+    width: 35px;
+}
+
+.keyword {
+    color: #ff4f9a;
+}
+
+.number {
+    color: #c8f4ff;
+}
+
+.string {
+    color: #d9d2ff;
+}
+
+.boolean {
+    color: #ffd6e8;
+}
+
+
+/* Unterer Bereich */
+
+.code-bottom {
+    padding: 20px 30px;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    background: #2b2b2b;
+}
+
+
+/* =========================
+   KONTAKT
+========================= */
+
+.contact {
+    text-align: center;
+
+    padding: 120px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #ffd6e8,
+        #d9d2ff
+    );
+}
+
+.contact h2 {
+    font-size: 60px;
+}
+
+.contact p {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 30px 10%;
+
+    display: flex;
+    justify-content: space-between;
+
+    background: #222;
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* =========================
+   ANIMATIONEN
+========================= */
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes letterAppear {
+    from {
+        opacity: 0;
+        transform: translateY(40px) rotate(1deg);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) rotate(0);
+    }
+}
+
+
+/* =========================
+   ANFRAGE / BRIEF
+========================= */
+
+.request-page {
+    min-height: 100vh;
+
+    padding: 150px 8% 100px;
+
+    background: linear-gradient(
+        135deg,
+        #c8f4ff,
+        #d9d2ff,
+        #ffd6e8
+    );
+}
+
+.request-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.request-header h1 {
+    font-size: clamp(45px, 7vw, 90px);
+
+    line-height: 1;
+
+    margin: 20px 0;
+}
+
+.request-header h1 span {
+    color: #ff4f9a;
+}
+
+.request-header p:last-child {
+    font-size: 18px;
+    margin-top: 25px;
+}
+
+
+/* Brief */
+
+.letter {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    padding: 70px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    box-shadow: 15px 15px 0 #222;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    animation: letterAppear 1s ease;
+}
+
+.letter-top {
+    text-align: right;
+
+    margin-bottom: 50px;
+
+    color: #777;
+}
+
+.letter h2 {
+    font-size: 28px;
+
+    margin-bottom: 30px;
+}
+
+.letter p {
+    margin-bottom: 25px;
+}
+
+.letter strong {
+    color: #ff4f9a;
+}
+
+.letter-ending {
+    margin-top: 45px;
+}
+
+
+/* Unterer Bereich */
+
+.request-footer {
+    text-align: center;
+
+    margin-top: 70px;
+}
+
+.request-footer p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 70px;
+    }
+
+    .hero-circle {
+        width: 250px;
+        height: 250px;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .hobbies {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Schulischer Werdegang */
+
+    .timeline::before {
+        left: 10px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even),
+    .timeline-item:nth-child(odd) {
+        width: 100%;
+
+        left: 0;
+
+        text-align: left;
+
+        padding-left: 40px;
+        padding-right: 0;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot,
+    .timeline-item:nth-child(even) .timeline-dot {
+        left: -1px;
+        right: auto;
+    }
+
+
+    /* Code */
+
+    .code-card {
+        margin-top: 40px;
+
+        box-shadow: 8px 8px 0 #d9d2ff;
+    }
+
+    .code-content {
+        padding: 20px;
+
+        font-size: 14px;
+    }
+
+    .code-bottom {
+        padding: 18px 20px;
+
+        font-size: 18px;
+    }
+
+
+    /* Anfrage */
+
+    .request-page {
+        padding: 120px 5% 70px;
+    }
+
+    .letter {
+        padding: 35px 25px;
+
+        box-shadow: 8px 8px 0 #222;
+
+        font-size: 16px;
+    }
+}
